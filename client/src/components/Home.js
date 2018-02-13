@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios';
+import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
 class Home extends Component {
@@ -32,6 +33,7 @@ class Home extends Component {
             return <div>{this.state.error}</div>
         }
         return(
+            
             <div>
                 <h1>Jeans Jams: Travel Edition</h1>
                 <h2>All Cities</h2>
@@ -47,3 +49,4 @@ class Home extends Component {
 }
 
 export default Home
+
