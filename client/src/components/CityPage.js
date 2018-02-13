@@ -38,31 +38,31 @@ export default class CityPage extends Component {
 
 
         return (
-            <div>
-                <div>
-                    <img width="500" src={this.state.city.photo_url} alt={this.state.city.name} />
+            <div className="container" >
+                <div className="city-container" >
+                    <div className="city-preview" >
+                        <img className="city-img" src={this.state.city.photo_url} alt={this.state.city.name} />
+                        <div className="city-name" >{this.state.city.name}</div>
+                    </div>
+                    <div className="city-stats" >
+                        <div className="city-stats-text" >
+                            {this.state.city.nickname}
+                        </div>
+                        <div className="city-stats-text" >
+                            Population: {this.state.city.population}
+                        </div>
+                        <div className="city-stats-text" >
+                            Type: {this.state.city.city_type}
+                        </div>
+                        <div className="city-stats-text" >
+                            Summary: {this.state.city.summary}
+                        </div>
+                        <div>
+                            <Link to="/"><button>Back to Cities</button></Link>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    {this.state.city.name}
-                </div>
-                <div>
-                    {this.state.city.nickname}
-                </div>
-                <div>
-                    Population: {this.state.city.population}
-                </div>
-                <div>
-                    Type: {this.state.city.city_type}
-                </div>
-                <div>
-                    Summary: {this.state.city.summary}
-                </div>
-                <div>
-                    <Link to="/"><button>Back to Cities</button></Link>
-                </div>
-                <div>
-                    <PostList posts={this.state.posts}/> 
-                </div>
+                <PostList posts={this.state.posts}/> 
             </div>
         )
     }

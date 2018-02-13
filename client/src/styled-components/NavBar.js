@@ -7,7 +7,7 @@ class NavBar extends Component {
 
         return(
             <NavBarStyle>
-                <div>Jeans Jams: Travel Edition</div>
+                <h1 className="header-title" >Jeans Jams: Travel Edition</h1>
             </NavBarStyle>
         )
     }
@@ -19,5 +19,7 @@ const NavBarStyle = styled.div`
     width: 100vw;
     height: 8vh;
     background-color: #FFC476;
+    display: flex;
+    align-items: center;
     /* color: #CBF3F0; */
 `
