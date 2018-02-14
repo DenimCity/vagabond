@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Post from './Post'
+
 import PostList from './PostList'
 import NewPostForm from './NewPostForm'
 
@@ -44,6 +44,9 @@ export default class CityPage extends Component {
         }
     }
 
+    editPost = async () => {
+
+    }
 
     deletePost = async (post) => {
         try {
@@ -157,7 +160,9 @@ export default class CityPage extends Component {
 
                 <PostList
                     posts={this.state.posts}
-                    deletePost={this.deletePost} />
+                    deletePost={this.deletePost}
+                    editPost={this.editPost}
+                    />
 
 
             </div>
