@@ -13,6 +13,7 @@ const SinglePost = props => {
         <img width="200" src={props.post_photo} alt="" />
       </div>
       <div>
+
         <h3>{props.title}</h3>
         <p>{props.body}</p>
       </div>
