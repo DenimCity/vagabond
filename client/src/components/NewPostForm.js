@@ -4,7 +4,6 @@ import styled from 'styled-components'
 function NewPostForm(props) {
     return (
         <div>
-
             <div>
                 <form onSubmit={props.createNewPost}>
                     {/* <div>
@@ -20,7 +19,7 @@ function NewPostForm(props) {
                         <label htmlFor="body">Description: </label>
                     </div>
                     <div>
-                        <input onChange={props.handlePostChange} name="body" value={props.post.body} />
+                        <input onChange={props.handlePostChange} name="body" maxlength="30" value={props.post.body} />
                     </div>
 
                     <div>
