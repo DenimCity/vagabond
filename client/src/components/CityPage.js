@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 import Post from './Post'
 import PostList from './PostList'
 
@@ -38,6 +39,7 @@ export default class CityPage extends Component {
 
 
         return (
+            <div>
             <div className="container" >
                 <div className="city-container" >
                     <div className="city-preview" >
@@ -58,11 +60,12 @@ export default class CityPage extends Component {
                             Summary: {this.state.city.summary}
                         </div>
                         <div>
-                            <Link to="/"><button>Back to Cities</button></Link>
+                            <Link to="/"><button className="button">Back to Cities</button></Link>
                         </div>
                     </div>
                 </div>
                 <PostList posts={this.state.posts}/> 
+            </div>
             </div>
         )
     }
