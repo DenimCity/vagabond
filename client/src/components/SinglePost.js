@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const SinglePost = (props) => {
 
-    const handleClick = () => {
-        if (window.confirm(`Are you sure you want to delete ${props.title}?`)) {
-            props.deletePost(props.post.id)
+export default class SinglePost extends Component {
+
+    state = {
+        editedUser: {}
+    }
+
+    handleClick = () => {
+        if (window.confirm(`Are you sure you want to delete ${this.props.title}?`)) {
+            this.props.deletePost(this.props.post.id)
         }
     }
-    
-    return(
-        <div >
-            <img width="200" src={props.post_photo} alt="" />
-            <div>{props.title}</div>
-            <div>{props.body}</div>
-            <button type="submit" onClick={handleClick}>Delete</button>
-        </div>
-    )
-    
+
+    render() {
+        return (
+
+            <div >
+                <img width="200" src={this.props.post_photo} alt="" />
+                <div>{this.props.title}</div>
+                <div>{this.props.body}</div>
+                <button type="submit" onClick={this.handleClick}>Delete</button>
+            </div>
+
+        )
+    }
 }
 
-export default SinglePost
+// export default SinglePost

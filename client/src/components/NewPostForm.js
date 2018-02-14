@@ -26,7 +26,6 @@ function NewPostForm(props) {
                     <div>
                         <input type="submit" value="Submit" />
                     </div>
-
                 </form>
             </div>
         </div>

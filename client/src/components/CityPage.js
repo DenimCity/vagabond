@@ -159,6 +159,7 @@ export default class CityPage extends Component {
                 </div>
 
                 <PostList
+                    handlePostChange={this.handlePostChange}
                     posts={this.state.posts}
                     deletePost={this.deletePost}
                     editPost={this.editPost}
