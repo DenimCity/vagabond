@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController
+    # skip_before_action :verify_authenticity_token
+    
     def index
         @city = City.find(params[:city_id])
         @posts = City.find(params[:city_id]).posts
@@ -6,6 +8,7 @@ class Api::PostsController < ApplicationController
     @response = {city: @city, posts: @posts}
     
     render json: @response
+
     end
 
     def show
@@ -18,6 +21,8 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+        # puts "POST PARAMS" + post_params
+        @city = City.find(params[:city_id])
         @post = Post.create!(post_params)
 
         render json: @post
@@ -32,13 +37,13 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post = Post.find(params[:id]).destroy
-
-        render status: :ok
+        @posts = City.find(params[:city_id]).posts
+        render json: @posts
     end
 
     private
     def post_params
-        params.require(:post).permit(:title, :body, :post_photo, :city_id, :user_id, :created_at)
+        params.require(:post).permit(:title, :body, :post_photo, :city_id, :user_id)
     end
 
 end

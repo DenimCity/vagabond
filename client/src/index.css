@@ -1,21 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-family: 'Nanum Myeongjo',
-  serif;
+  font-family: 'Oswald',
+  sans-serif;
+
 }
 
 .header-title {
   color: purple;
   font-size: 24px;
   margin-left: 20px;
-}
-
-.skull {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .container {
@@ -67,9 +61,8 @@ body {
   margin: 10px auto;
 }
 
-.button {
+.city-button {
     border: 1px solid black;
-    font-size: 13px;
     max-width: 250px;
     min-width: 150px;
     display: flex;
@@ -77,9 +70,67 @@ body {
     align-items: center;
     height: 40px;
     transition: all 0.25s ease;
-    background: #e7961b;
+    background: #ffb10a;
+    text-decoration: none;
 }
-.button:hover {
-    background-color: blue;
-    color: white;
-  }
+
+.city-button:hover {
+  background-color: rgb(38, 52, 247);
+  
+
+  color: white;
+}
+
+.city-button-2 {
+  border: 1px solid black;
+  max-width: 250px;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: all 0.25s ease;
+  background : rgb(38, 52, 247);
+}
+
+.city-button-2:hover {
+  background-color: #ffb10a;
+  
+  color: white;
+}
+
+.delete {
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 20%;
+    max-width: 100px;
+    min-width: 50px;
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: all 0.25s ease;
+    background: rgb(247, 38, 38);
+}
+
+.ImagePost {
+  margin-bottom: 20px;
+  margin: 0px 500px 0px 500px;
+  padding-top: 20px;
+}
+
+.post-title {
+  color: #ffb10a;
+  font-weight: bold;
+  margin: 0px 500px 0px 500px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.post-text {
+  margin: 0px 500px 0px 500px;
+  
+}
+
