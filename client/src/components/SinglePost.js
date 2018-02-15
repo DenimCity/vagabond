@@ -3,7 +3,7 @@ import React from 'react'
 const SinglePost = (props) => {
 
     const handleClick = () => {
-        if (window.confirm('Are you sure?')) {
+        if (window.confirm(`Are you sure you want to delete ${props.title}?`)) {
             props.deletePost(props.post.id)
         }
     }

@@ -56,7 +56,8 @@ export default class CityPage extends Component {
         catch (err) {
             console.log(err)
         }
-      
+    }
+    
     toggleNewPostForm = () => {
         const newPostFormShowing = !this.state.newPostFormShowing
         this.setState({
@@ -68,35 +69,30 @@ export default class CityPage extends Component {
         event.preventDefault()
         const post = { ...this.state.post }
         post[event.target.name] = event.target.value
-        this.setState({ post: post, })
+        this.setState({ post: post })
     }
+
 
     createNewPost = async (event) => {
         event.preventDefault()
         const cityId = this.props.match.params.id
+        console.log("POST", this.state.post)
         const payload = {
             title: this.state.post.title,
-            body: this.state.post.body
+            body: this.state.post.body,
+            city_id: cityId,
+            post_photo: '',
+            user_id: '1'
         }
-        const blankForm = {
-            title: '',
-            body: ''
-        }
+        console.log(payload)
+        const blankForm = {}
         await axios.post(`/api/cities/${this.props.match.params.id}/posts`, payload)
         await this.getCity()
         this.setState({
-            addFormShowing: false,
-            user: blankForm
+            newPostFormShowing: false,
+            post: blankForm
         })
     }
-
-    toggleNewPostForm = () => {
-        const newPostFormShowing = !this.state.newPostFormShowing
-        this.setState({
-            newPostFormShowing
-        })
-    }
-
 
     render() {
 
@@ -150,11 +146,10 @@ export default class CityPage extends Component {
                         </div>
                     </div>
                 </div>
-          
-                <PostList 
-                posts={this.state.posts}
-                deletePost={this.deletePost}/> 
 
+                <PostList
+                    posts={this.state.posts}
+                    deletePost={this.deletePost} />
 
             </div>
         )

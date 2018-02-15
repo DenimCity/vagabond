@@ -7,17 +7,20 @@ function NewPostForm(props) {
 
             <div>
                 <form onSubmit={props.createNewPost}>
+                    {/* <div>
+                        <input value="Jackson"/>
+                    </div> */}
                     <div>
                         <label htmlFor="title">Title: </label>
                     </div>
                     <div>
-                        <input onChange={props.handlePostChange} name="title" value={props.post.title} placeholder="test" />
+                        <input onChange={props.handlePostChange} name="title" value={props.post.title} />
                     </div>
                     <div>
                         <label htmlFor="body">Description: </label>
                     </div>
                     <div>
-                        <input onChange={props.handlePostChange} name="body" value={props.post.body} placeholder="test"/>
+                        <input onChange={props.handlePostChange} name="body" value={props.post.body} />
                     </div>
 
                     <div>

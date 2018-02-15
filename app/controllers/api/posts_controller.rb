@@ -21,6 +21,8 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+        # puts "POST PARAMS" + post_params
+        @city = City.find(params[:city_id])
         @post = Post.create!(post_params)
 
         render json: @post
@@ -41,7 +43,7 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :body, :post_photo, :city_id, :user_id, :created_at)
+        params.require(:post).permit(:title, :body, :post_photo, :city_id, :user_id)
     end
 
 end
