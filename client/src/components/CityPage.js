@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import Post from './Post'
 import PostList from './PostList'
 import NewPostForm from './NewPostForm'
 
@@ -45,6 +43,14 @@ export default class CityPage extends Component {
         }
     }
 
+    editPost = async (editedPost) => {
+        const cityId = this.props.match.params.id
+        const postId = editedPost.id
+        const response = await axios.patch(`/api/cities/${cityId}/posts/${postId}`, {post: editedPost})        
+        this.setState({
+            posts: response.data
+        })
+    }
 
     deletePost = async (post) => {
         try {
@@ -58,7 +64,7 @@ export default class CityPage extends Component {
             console.log(err)
         }
     }
-
+    
     toggleNewPostForm = () => {
         const newPostFormShowing = !this.state.newPostFormShowing
         this.setState({
@@ -73,16 +79,24 @@ export default class CityPage extends Component {
         this.setState({ post: post })
     }
 
+    handleEditPostChange = (event) => {
+        console.log("POSTS ---", this.state.posts)
+        const attribute = event.target.name
+        const post = [...this.state.posts]
+        // console.log(posts)
+        post[attribute] = event.target.value
+        this.setState({ post: post })
+    }
+
 
     createNewPost = async (event) => {
         event.preventDefault()
         const cityId = this.props.match.params.id
-        console.log("POST", this.state.post)
         const payload = {
             title: this.state.post.title,
             body: this.state.post.body,
             city_id: cityId,
-            post_photo: '',
+            post_photo: this.state.post.post_photo,
             user_id: '1'
         }
         console.log(payload)
@@ -95,21 +109,14 @@ export default class CityPage extends Component {
         })
     }
 
-    toggleNewPostForm = () => {
-        const newPostFormShowing = !this.state.newPostFormShowing
-        this.setState({
-            newPostFormShowing,
-        })
-    }
-
-
     render() {
-
+        console.log("CITY PAGE POST", this.state.posts)
         return (
             <div className="container" >
                 <div className="city-container" >
                     <div className="city-preview" >
                         <img className="city-img" src={this.state.city.photo_url} alt={this.state.city.name} />
+                        
                         <div className="city-name" >{this.state.city.name}</div>
                     </div>
                     <div className="city-stats" >
@@ -144,22 +151,19 @@ export default class CityPage extends Component {
                                                 post={this.state.post}
                                                 createNewPost={this.createNewPost}
                                             />
-
                                         </div>
                                         : null
                                 }
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>
-
                 <PostList
+                    handleEditPostChange={this.handleEditPostChange}
                     posts={this.state.posts}
-                    deletePost={this.deletePost} />
-
+                    deletePost={this.deletePost}
+                    editPost={this.editPost}
+                    />
 
             </div>
         )

@@ -15,7 +15,7 @@ export default class UserSignIn extends Component {
             </label>
             <input
               type="text"
-              value="DanielleGoneWild@gmail.com"
+              value="DanielGoneWild@gmail.com"
               placeholder="Enter Email"
               name="email"
             />
