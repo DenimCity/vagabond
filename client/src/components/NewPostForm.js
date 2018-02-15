@@ -1,15 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 function NewPostForm(props) {
-    return (
-        <div>
-
-            <div>
-                <form onSubmit={props.createNewPost}>
-                    {/* <div>
-                        <input value="Jackson"/>
-                    </div> */}
+  return (
+    <div>
+      <div>
+        <form onSubmit={props.createNewPost}>
                     <div>
                         <label htmlFor="title">Title:</label>
                     </div>
@@ -20,7 +16,7 @@ function NewPostForm(props) {
                         <label htmlFor="body">Description: </label>
                     </div>
                     <div>
-                        <input onChange={props.handlePostChange} name="body" value={props.post.body} />
+                        <input onChange={props.handlePostChange} name="body" maxLength="30" value={props.post.body} />
                     </div>
                     <div>
                         <label htmlFor="post_photo">Photo URL:</label>
@@ -38,4 +34,4 @@ function NewPostForm(props) {
     )
 }
 
-export default NewPostForm
+export default NewPostForm;

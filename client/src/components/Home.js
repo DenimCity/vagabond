@@ -34,8 +34,6 @@ class Home extends Component {
         return (
             <Background>
                 <div>
-                    <h1>Jeans Jams: Travel Edition</h1>
-                    <h2>All Cities</h2>
                     {this.state.cities.map(city => (
                     <Link to={`/cities/${city.id}`}>
                         <div key={city.id} className="city-preview" >

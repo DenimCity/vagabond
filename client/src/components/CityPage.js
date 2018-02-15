@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
 import PostList from './PostList'
 import NewPostForm from './NewPostForm'
 
@@ -117,6 +116,7 @@ export default class CityPage extends Component {
                 <div className="city-container" >
                     <div className="city-preview" >
                         <img className="city-img" src={this.state.city.photo_url} alt={this.state.city.name} />
+                        
                         <div className="city-name" >{this.state.city.name}</div>
                     </div>
                     <div className="city-stats" >
@@ -151,18 +151,13 @@ export default class CityPage extends Component {
                                                 post={this.state.post}
                                                 createNewPost={this.createNewPost}
                                             />
-
                                         </div>
                                         : null
                                 }
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>
-
                 <PostList
                     handleEditPostChange={this.handleEditPostChange}
                     posts={this.state.posts}
