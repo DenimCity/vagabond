@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 
-
-
-
 class SinglePost extends Component {
 
     state = {
@@ -23,25 +20,24 @@ class SinglePost extends Component {
         newPost[event.target.name] = event.target.value
 
         this.setState({ postToChange: newPost })
-
+    }
+    updatePost = (event) => {
+        event.preventDefault()
+        this.props.editPost(this.state.postToChange)
     }
 
     handleClick = () => {
-
-
 
         if (window.confirm(`Are you sure you want to delete ${this.props.title}?`)) {
             this.props.deletePost(this.props.post.id)
         }
     }
 
-
-
     render() {
 
         return (
             <div>
-                this.state.pageNotReady ?
+                {this.state.pageNotReady ?
                 <div>test true </div> :
                 <div >
                     <img width="200" src={this.props.post_photo} alt="" />
@@ -49,18 +45,18 @@ class SinglePost extends Component {
                     <div>{this.props.body}</div>
                     <button type="submit" onClick={this.handleClick}>Delete</button>
                     <div className="edit-form-container">
-                        <form onSubmit={this.props.editPost}>
+                        <form onSubmit={this.updatePost}>
 
                             {/* STILL NEED TO PUT EDIT FORM FUNCTION IN ACTION */}
 
                             <div>
                                 <label htmlFor="title">Title: </label>
-                                <input onChange={this.handleEditPostChange} name="title" type="text" value={this.state.postToChange.title} />
+                                <input onChange={this.handleEditPostChange} name="title" type="text"/>
                             </div>
 
                             <div>
                                 <label htmlFor="body">Description: </label>
-                                <input onChange={this.handleEditPostChange} name="body" type="text" value={this.state.postToChange.body} />
+                                <input onChange={this.handleEditPostChange} name="body" type="text"  />
                             </div>
                             <div>
                                 <input type="submit" value="Submit" />
@@ -68,7 +64,7 @@ class SinglePost extends Component {
 
                         </form>
                     </div>
-                </div>
+                </div>}
             </div>
 
         )

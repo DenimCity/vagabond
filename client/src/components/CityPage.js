@@ -44,9 +44,13 @@ export default class CityPage extends Component {
         }
     }
 
-    editPost = async () => {
-        console.log("EDIT POST FUNCTION RUNNING BUT NOT DOING ANYTHING")
-        
+    editPost = async (editedPost) => {
+        const cityId = this.props.match.params.id
+        const postId = editedPost.id
+        const response = await axios.patch(`/api/cities/${cityId}/posts/${postId}`, {post: editedPost})        
+        this.setState({
+            posts: response.data
+        })
     }
 
     deletePost = async (post) => {
