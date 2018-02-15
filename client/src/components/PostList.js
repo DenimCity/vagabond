@@ -17,9 +17,10 @@ const PostList = (props) => {
                                 title={post.title}
                                 body={post.body}
                                 post={post}
+                                postId = {post.id}
                                 deletePost={props.deletePost} 
                                 editPost={props.editPost}
-                                handlePostChange={props.handlePostChange}
+                                handleEditPostChange={props.handleEditPostChange}
                                 />
                                 
                         </div>

@@ -45,7 +45,8 @@ export default class CityPage extends Component {
     }
 
     editPost = async () => {
-
+        console.log("EDIT POST FUNCTION RUNNING BUT NOT DOING ANYTHING")
+        
     }
 
     deletePost = async (post) => {
@@ -75,11 +76,19 @@ export default class CityPage extends Component {
         this.setState({ post: post })
     }
 
+    handleEditPostChange = (event) => {
+        console.log("POSTS ---", this.state.posts)
+        const attribute = event.target.name
+        const post = [...this.state.posts]
+        // console.log(posts)
+        post[attribute] = event.target.value
+        this.setState({ post: post })
+    }
+
 
     createNewPost = async (event) => {
         event.preventDefault()
         const cityId = this.props.match.params.id
-        console.log("POST", this.state.post)
         const payload = {
             title: this.state.post.title,
             body: this.state.post.body,
@@ -106,7 +115,6 @@ export default class CityPage extends Component {
 
 
     render() {
-
         return (
             <div className="container" >
                 <div className="city-container" >
@@ -159,7 +167,7 @@ export default class CityPage extends Component {
                 </div>
 
                 <PostList
-                    handlePostChange={this.handlePostChange}
+                    handleEditPostChange={this.handleEditPostChange}
                     posts={this.state.posts}
                     deletePost={this.deletePost}
                     editPost={this.editPost}
