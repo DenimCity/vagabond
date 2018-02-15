@@ -11,7 +11,7 @@ function NewPostForm(props) {
                         <input value="Jackson"/>
                     </div> */}
                     <div>
-                        <label htmlFor="title">Title: </label>
+                        <label htmlFor="title">Title:</label>
                     </div>
                     <div>
                         <input onChange={props.handlePostChange} name="title" value={props.post.title} />
@@ -26,7 +26,6 @@ function NewPostForm(props) {
                     <div>
                         <input type="submit" value="Submit" />
                     </div>
-
                 </form>
             </div>
         </div>
