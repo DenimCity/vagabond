@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import SinglePost from './SinglePost'
 
 const PostList = (props) => {
-
+    console.log("POST LIST", props.post)
     return (
         <div>
             {
@@ -27,7 +27,6 @@ const PostList = (props) => {
                     )
                 })
             }
-            <SinglePost />
         </div>
     )
 

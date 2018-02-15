@@ -10,6 +10,7 @@ class SinglePost extends Component {
     }
 
     componentWillMount = () => {
+        console.log(this.props.post)
         this.setState({ postToChange: this.props.post, pageNotReady: false })
     }
 
@@ -51,12 +52,12 @@ class SinglePost extends Component {
 
                             <div>
                                 <label htmlFor="title">Title: </label>
-                                <input onChange={this.handleEditPostChange} name="title" type="text"/>
+                                <input onChange={this.handleEditPostChange} name="title" type="text" value={this.state.postToChange.title}/>
                             </div>
 
                             <div>
                                 <label htmlFor="body">Description: </label>
-                                <input onChange={this.handleEditPostChange} name="body" type="text"  />
+                                <input onChange={this.handleEditPostChange} name="body" type="text" value={this.state.postToChange.body} />
                             </div>
                             <div>
                                 <input type="submit" value="Submit" />

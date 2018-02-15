@@ -111,6 +111,7 @@ export default class CityPage extends Component {
     }
 
     render() {
+        console.log("CITY PAGE POST", this.state.posts)
         return (
             <div className="container" >
                 <div className="city-container" >
