@@ -110,6 +110,17 @@ body {
     background: rgb(247, 38, 38);
 }
 
+.edit {
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 20%;
+  max-width: 100px;
+  min-width: 50px;
+  margin-top: 10px;
+  transition: all 0.25s ease;
+  background: greenyellow;
+}
+
 .ImagePost {
   margin-bottom: 20px;
   margin: 0px 500px 0px 500px;

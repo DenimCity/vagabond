@@ -34,6 +34,7 @@ class SinglePost extends Component {
     updatePost = (event) => {
         event.preventDefault()
         this.props.editPost(this.state.postToChange)
+        this.toggleEditPostForm()
     }
 
     handleClick = () => {
@@ -47,42 +48,48 @@ class SinglePost extends Component {
 
         return (
             <div>
-                {this.state.pageNotReady ?
-                <div>test true </div> :
-                <div >
-                    <img className="ImagePost" width="300" src={this.props.post_photo} alt="" />
-                    <div className="post-title">{this.props.title}</div>
-                    <div className="post-text">{this.props.body}</div>
-                    <button className="delete" type="submit" onClick={this.handleClick}>Delete</button>
-                    <div className="edit-form-container">
-                    <button onClick={this.toggleEditPostForm}>
-                            Edit New Post
-                    </button>
-                    { this.state.editPostFormShowing ?
-                        <form onSubmit={this.updatePost}>
+                {/* {this.state.pageNotReady ? */}
+                    {/* <div>test true </div> : */}
+                    <div >
+                        <img className="ImagePost" width="300" src={this.props.post_photo} alt="" />
+                        <div className="post-title">{this.props.title}</div>
+                        <div className="post-text">{this.props.body}</div>
+                        <div>
+                            <button className="delete" type="submit" onClick={this.handleClick}>Delete</button>
 
-                            <div>
-                                <label htmlFor="title">Title: </label>
-                                <input onChange={this.handleEditPostChange} name="title" type="text" value={this.state.postToChange.title}/>
-                            </div>
+                            <button className="edit" onClick={this.toggleEditPostForm}>
+                                Edit Post
+                            </button>
+                        </div>
+                        <div>
+                            <div className="post-text">
+                                {this.state.editPostFormShowing ?
+                                    <form onSubmit={this.updatePost}>
 
-                            <div>
-                                <label htmlFor="body">Description: </label>
-                                <input onChange={this.handleEditPostChange} name="body" type="text" value={this.state.postToChange.body} />
-                            </div>
-                            <div>
-                                <label htmlFor="body">Photo URL:</label>
-                                <input onChange={this.handleEditPostChange} name="post_photo" type="text" value={this.state.postToChange.post_photo} />
-                            </div>
-                            <div>
-                                <input type="submit" value="Submit" />
-                            </div>
+                                        <div>
+                                            <label htmlFor="title">Title: </label>
+                                            <input onChange={this.handleEditPostChange} name="title" type="text" value={this.state.postToChange.title} />
+                                        </div>
 
-                        </form>
-                        : null
-                    }
+                                        <div>
+                                            <label htmlFor="body">Description: </label>
+                                            <input onChange={this.handleEditPostChange} name="body" type="text" value={this.state.postToChange.body} />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="body">Photo URL:</label>
+                                            <input onChange={this.handleEditPostChange} name="post_photo" type="text" value={this.state.postToChange.post_photo} />
+                                        </div>
+                                        <div>
+                                            <input className="edit" type="submit" value="Submit" />
+                                        </div>
+
+                                    </form>
+                                    : null
+                                }
+
+                            </div>
+                        </div>
                     </div>
-                </div>}
             </div>
 
         )
@@ -90,3 +97,4 @@ class SinglePost extends Component {
 }
 
 export default SinglePost;
+
