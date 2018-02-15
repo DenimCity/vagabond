@@ -5,24 +5,25 @@ import styled from "styled-components";
 import SinglePost from "./SinglePost";
 
 const PostList = props => {
-  return (
-    <PosterCardWrapper>
-      {props.posts.map(post => {
-        return (
-          <NewJackCity key={post.id}>
-            <SinglePost
-              post_photo={post.post_photo}
-              title={post.title}
-              body={post.body}
-              post={post}
-              deletePost={props.deletePost}
-            />
-          </NewJackCity>
-        );
-      })}
-      <SinglePost />
-    </PosterCardWrapper>
-  );
+    return (
+        <PosterCardWrapper>
+            {props.posts.map(post => {
+                return (
+                    <NewJackCity key={post.id}>
+                        <SinglePost
+                            post_photo={post.post_photo}
+                            title={post.title}
+                            body={post.body}
+                            post={post}
+                            deletePost={props.deletePost}
+                            editPost={props.editPost}
+                        />
+                    </NewJackCity>
+                );
+            })}
+
+        </PosterCardWrapper>
+    );
 };
 
 export default PostList;

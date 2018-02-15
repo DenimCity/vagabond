@@ -4,7 +4,7 @@ import styled from "styled-components";
 function NewPostForm(props) {
   return (
     <div>
-      <div>
+        <div>
         <form onSubmit={props.createNewPost}>
                     <div>
                         <label htmlFor="title">Title:</label>
