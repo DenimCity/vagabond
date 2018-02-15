@@ -133,12 +133,12 @@ export default class CityPage extends Component {
                             Summary: {this.state.city.summary}
                         </div>
                         <div>
-                            <Link to="/"><button>Back to Cities</button></Link>
+                            <Link to="/"><button className="city-button">Back to Cities</button></Link>
                         </div>
 
                         <div>
                             <div>
-                                <button onClick={this.toggleNewPostForm}>
+                                <button className="city-button-2" onClick={this.toggleNewPostForm}>
                                     Add New Post
                                 </button>
                             </div>

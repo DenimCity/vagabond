@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Oswald',
+  sans-serif;
+
 }
 
 .header-title {
@@ -57,6 +59,77 @@ body {
 .city-stats-text {
   font-size: 22px;
   margin: 10px auto;
+}
+
+.city-button {
+    border: 1px solid black;
+    max-width: 250px;
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: all 0.25s ease;
+    background: #ffb10a;
+    text-decoration: none;
+}
+
+.city-button:hover {
+  background-color: rgb(38, 52, 247);
+  
+  color: white;
+}
+
+.city-button-2 {
+  border: 1px solid black;
+  max-width: 250px;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: all 0.25s ease;
+  background : rgb(38, 52, 247);
+}
+
+.city-button-2:hover {
+  background-color: #ffb10a;
+  
+  color: white;
+}
+
+.delete {
+    margin-bottom: 20px;
+    margin-left: 500px;
+    border: 1px solid black;
+    border-radius: 20%;
+    max-width: 100px;
+    min-width: 50px;
+    margin-top: 10px;
+    transition: all 0.25s ease;
+    background: rgb(247, 38, 38);
+}
+
+.ImagePost {
+  margin-bottom: 20px;
+  margin: 0px 500px 0px 500px;
+  padding-top: 40px;
+}
+
+.post-title {
+  color: #ffb10a;
+  font-weight: bold;
+  margin: 0px 500px 0px 500px;
+  font-size: 25px;
+}
+
+.post-text {
+  margin: 0px 500px 0px 500px;
+  
+}
+
+a {
+  text-decoration: none;
 }
 
 .admin-body {

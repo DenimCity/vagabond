@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, {Component} from 'react'
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SinglePost from "./SinglePost";
@@ -31,7 +31,6 @@ export default PostList;
 const NewJackCity = styled.div`
 margin:2rem;
 `;
-
 const PosterCardWrapper = styled.div`
 display:flex;
 justify-content:center;

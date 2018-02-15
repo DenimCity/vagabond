@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 
 class SinglePost extends Component {
 
@@ -49,10 +50,10 @@ class SinglePost extends Component {
                 {this.state.pageNotReady ?
                 <div>test true </div> :
                 <div >
-                    <img width="200" src={this.props.post_photo} alt="" />
-                    <div>{this.props.title}</div>
-                    <div>{this.props.body}</div>
-                    <button type="submit" onClick={this.handleClick}>Delete</button>
+                    <img className="ImagePost" width="300" src={this.props.post_photo} alt="" />
+                    <div className="post-title">{this.props.title}</div>
+                    <div className="post-text">{this.props.body}</div>
+                    <button className="delete" type="submit" onClick={this.handleClick}>Delete</button>
                     <div className="edit-form-container">
                     <button onClick={this.toggleEditPostForm}>
                             Edit New Post
