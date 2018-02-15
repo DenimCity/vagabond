@@ -22,6 +22,12 @@ function NewPostForm(props) {
                     <div>
                         <input onChange={props.handlePostChange} name="body" value={props.post.body} />
                     </div>
+                    <div>
+                        <label htmlFor="post_photo">Photo URL:</label>
+                        <div>
+                        <input onChange={props.handlePostChange} name="post_photo" type="text" value={props.post_photo} />
+                        </div>
+                    </div>
 
                     <div>
                         <input type="submit" value="Submit" />

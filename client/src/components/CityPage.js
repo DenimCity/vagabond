@@ -97,7 +97,7 @@ export default class CityPage extends Component {
             title: this.state.post.title,
             body: this.state.post.body,
             city_id: cityId,
-            post_photo: '',
+            post_photo: this.state.post.post_photo,
             user_id: '1'
         }
         console.log(payload)

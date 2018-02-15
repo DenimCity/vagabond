@@ -6,7 +6,15 @@ class SinglePost extends Component {
         postToChange: {
 
         },
-        pageNotReady: true
+        pageNotReady: true,
+        editPostFormShowing: false
+    }
+
+    toggleEditPostForm = () => {
+        const editPostFormShowing = !this.state.editPostFormShowing
+        this.setState({
+            editPostFormShowing
+        })
     }
 
     componentWillMount = () => {
@@ -46,9 +54,11 @@ class SinglePost extends Component {
                     <div>{this.props.body}</div>
                     <button type="submit" onClick={this.handleClick}>Delete</button>
                     <div className="edit-form-container">
+                    <button onClick={this.toggleEditPostForm}>
+                            Edit New Post
+                    </button>
+                    { this.state.editPostFormShowing ?
                         <form onSubmit={this.updatePost}>
-
-                            {/* STILL NEED TO PUT EDIT FORM FUNCTION IN ACTION */}
 
                             <div>
                                 <label htmlFor="title">Title: </label>
@@ -60,10 +70,16 @@ class SinglePost extends Component {
                                 <input onChange={this.handleEditPostChange} name="body" type="text" value={this.state.postToChange.body} />
                             </div>
                             <div>
+                                <label htmlFor="body">Photo URL:</label>
+                                <input onChange={this.handleEditPostChange} name="post_photo" type="text" value={this.state.postToChange.post_photo} />
+                            </div>
+                            <div>
                                 <input type="submit" value="Submit" />
                             </div>
 
                         </form>
+                        : null
+                    }
                     </div>
                 </div>}
             </div>
