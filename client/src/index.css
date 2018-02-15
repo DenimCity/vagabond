@@ -77,7 +77,6 @@ body {
 .city-button:hover {
   background-color: rgb(38, 52, 247);
   
-
   color: white;
 }
 
@@ -101,16 +100,12 @@ body {
 
 .delete {
     margin-bottom: 20px;
+    margin-left: 500px;
     border: 1px solid black;
     border-radius: 20%;
     max-width: 100px;
     min-width: 50px;
     margin-top: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
     transition: all 0.25s ease;
     background: rgb(247, 38, 38);
 }
@@ -118,7 +113,7 @@ body {
 .ImagePost {
   margin-bottom: 20px;
   margin: 0px 500px 0px 500px;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .post-title {
@@ -126,11 +121,14 @@ body {
   font-weight: bold;
   margin: 0px 500px 0px 500px;
   font-size: 25px;
-  text-decoration: underline;
 }
 
 .post-text {
   margin: 0px 500px 0px 500px;
   
+}
+
+a {
+  text-decoration: none;
 }
 
