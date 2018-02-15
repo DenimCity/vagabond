@@ -26,7 +26,7 @@ function NewPostForm(props) {
             <input
               onChange={props.handlePostChange}
               name="body"
-              maxlength="30"
+              maxLength="30"
               value={props.post.body}
             />
           </div>
